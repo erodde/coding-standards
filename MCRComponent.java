@@ -18,6 +18,13 @@
 
 package org.mycore.common.config;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.mycore.common.MCRClassTools;
+import org.mycore.common.MCRException;
+
+
+
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
@@ -26,10 +33,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.jar.Manifest;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.mycore.common.MCRClassTools;
-import org.mycore.common.MCRException;
+
 
 /**
  * This class abstracts different MyCoRe component types.
