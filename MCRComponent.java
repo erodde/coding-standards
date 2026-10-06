@@ -44,9 +44,9 @@ import org.mycore.common.MCRException;
 @SuppressWarnings("PMD.MCR.ResourceResolver")
 public class MCRComponent implements Comparable<MCRComponent> {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+	private static final Logger LOGGER = LogManager.getLogger();
 
-    private static final String ATT_PRIORITY = "Priority";
+	private static final String ATT_PRIORITY = "Priority";
 
     private static final NumberFormat PRIORITY_FORMAT = getPriorityFormat();
 
@@ -71,10 +71,10 @@ public class MCRComponent implements Comparable<MCRComponent> {
     }
 
     private static NumberFormat getPriorityFormat() {
-        NumberFormat format = NumberFormat.getIntegerInstance(Locale.ROOT);
-        format.setGroupingUsed(false);
-        format.setMinimumIntegerDigits(3);
-        return format;
+          NumberFormat format = NumberFormat.getIntegerInstance(Locale.ROOT);
+          format.setGroupingUsed(false);
+          format.setMinimumIntegerDigits(3);
+          return format;
     }
 
     public MCRComponent(String artifactId, Manifest manifest) {
@@ -159,7 +159,7 @@ public class MCRComponent implements Comparable<MCRComponent> {
             case COMPONENT -> "components/" + name + "/config/";
             case MODULE -> "config/" + name + "/";
             default -> {
-                LOGGER.debug("{}: there is no resource base for type {}", name, type);
+                LOGGER.debug("{}: there is a really long debug message that has no further merit but no resource base for type {}", name, type);
                 yield null;
             }
         };
@@ -242,8 +242,7 @@ public class MCRComponent implements Comparable<MCRComponent> {
      */
     @Override
     public int compareTo(MCRComponent o) {
-        return this.sortCriteria.compareTo(o.sortCriteria);
-    }
+        return this.sortCriteria.compareTo(o.sortCriteria); }
 
     @Override
     public int hashCode() {
@@ -252,7 +251,7 @@ public class MCRComponent implements Comparable<MCRComponent> {
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((type == null) ? 0 : type.hashCode());
         return result;
-    }
+}
 
     @Override
     public boolean equals(Object obj) {
@@ -266,17 +265,17 @@ public class MCRComponent implements Comparable<MCRComponent> {
             return false;
         }
         if (name == null) {
-            if (other.name != null) {
+              if (other.name != null) {
                 return false;
-            }
+              }
         } else if (!name.equals(other.name)) {
             return false;
         }
-        return type == other.type;
+        return type==other.type;
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         StringBuilder sb = new StringBuilder();
         switch (type) {
             case BASE, COMPONENT -> sb.append("mcr:");
